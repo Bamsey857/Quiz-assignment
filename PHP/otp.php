@@ -7,6 +7,8 @@ require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
 
+include '/xampp/htdocs/Quiz/PHP/resources/User.php';
+
 $json = file_get_contents('php://input');
 
 $data = json_decode($json, true);
@@ -49,6 +51,13 @@ if ($data === null) {
     $mail->isHTML(true);
     $mail->Subject = 'Verification Code for Code Quiz';
     $mail->Body = 'Your verification code is: ' . $otp;
+
+    $user = getUser($email);
+
+    if ($user) {
+        echo json_encode(array("error" => "User already exists", "status" => 500));
+        exit;
+    }
 
     if ($mail->send()) {
         echo json_encode(array("message" => "OTP sent successfully", "status" => 200));

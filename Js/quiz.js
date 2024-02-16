@@ -41,8 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
             displayQuestion();
         } else {
             clearInterval(timer);
+
             alert('Quiz completed! Your score: ' + score);
-            window.location.href = "http://localhost/Quiz/User/dashboard.html";
+
+            document.getElementById('quizScore').textContent = 'Your score: ' + score + '/' + questions.length;
+            const remarkText = score >= questions.length / 2 ? 'Well done!' : 'Keep practicing!';
+            document.getElementById('quizRemark').textContent = remarkText;
+            document.getElementById('quizResultPopup').style.display = 'flex';
+
+            document.getElementById('goToDashboardBtn').addEventListener('click', function () {
+                window.location.href = "http://localhost/Quiz/User/dashboard.html";
+            });
         }
     }
 
@@ -74,4 +83,5 @@ document.addEventListener("DOMContentLoaded", function () {
     startTimer(quizDuration);
     displayQuestion();
     nextButton.addEventListener('click', nextQuestion);
+
 });

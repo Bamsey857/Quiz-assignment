@@ -13,13 +13,15 @@
   }
 </script>
 <style>
-  #popup{
+  #popup {
     z-index: 9999;
   }
-  ::-webkit-scrollbar{
+
+  ::-webkit-scrollbar {
     display: none;
-}
+  }
 </style>
+
 <body class="h-full">
   <div class="min-h-full">
     <nav class="bg-gray-800">
@@ -27,8 +29,7 @@
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Your Company" />
+              <!--  -->
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
@@ -47,7 +48,7 @@
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
                     <img class="h-8 w-8 rounded-full"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAY1BMVEX///8AAABJSUnR0dEODg6enp6kpKQRERF0dHRwcHAyMjK8vLzw8PDp6ens7OxZWVnc3NwkJCQdHR2NjY04ODj29vaqqqoXFxe1tbXLy8tQUFDj4+OBgYGVlZVnZ2crKytAQEBodD3rAAAE6UlEQVR4nO2di5aqMAxFrfgolJcgiIro/3/lBee6dBxGRXOSDqv7B3Qv2rQpaZhMoKT1Rt2yqrC/B6OIqpO6ZyH9r94i8vLVDxWl6lD6jw2m8Mqkx6RlMy+k/9wwQpOv+1W6WZOn0v9vAPtS942vK8n8r+h4eZI9VOnY6bln/2jbNj/jV//UOe10GUn/3UdU08fj644sWOdb6f/cT1H9PukfMPPt8ylM8I7KF3Vq0wQqti9Old9ottbopPVnKh2WrD6FeWuy3BNUFjyccD6jcGlDwUE8VEf5ksaltan3wi410XM522hRmyKnU+mQTBCKBa2LUoIJwpbaRSmx/UBMEpO/c5QKaQd6l3b1lHGJEC5KyTwagk1MH7WES4FxUTOJgFaBZJTEOaGPktECMh9kY48J+F3S54cwb5LxpzZm8/xvvSlj2GVKsq3/PcuSXYYqJ/vJ7OBknIyTcTJOxjaZuZNxMk7GyTiZt1jAUgD3ZD5jVE/GyTiZvy3DXy2Ik1k6GSfjZJyMk3EyTsbJcHAY04lmg3JRquF28QBFQBdOzG9oS9iL846A9a0mpJ7pFsZpk/5y04eOhG+kpTu0zM7jkxnTk4lgRUAXfMYSujEFgEmJluGMzeaIdTly1gJ5U6zMlLO8OQZHgIazhLYAVc5eqFmLTudYGd4koBp0iXEoK97yOWwEOPFtZjpi6IYmYS6hh4Yz7lQTGs64rwOUwAiQcZfPIs8AAu7rTSEwnE1jZpkJMJwl3C7AQ0CBm1qjutgwgR1q7PhdcNkm/72GNp6hZESuBIPimcQog92gk+mzBRpnQhfPMTIyLhONcJG42NgBCc4SgbkjRchItWyBRACpxhMFYKVJxPpOACaN1JRpJw15GjCT63IUkxcDNOxJ5hXycSY3yujf1E5Fe2kRbzYlHwz1e+edcJOzkvAogP3w756Q8JxWi/elTT9sB3iFu5ipD0N06rzi7zbRA9HbDV/a48yepDXIRriH3gWSgJZJW/yHZNJYIlPQPBkL2mi2RDRzRryL5hmPpFx7aUd3YEOSos3s+GJASSMjvTH7gqgskL9ovg+ig02po8zvEKU0/K9l+yB6iT6V9jgzJpmQKKE5iadmLSlR4cnagtxs4hHdPgl4K+b6WRAdaWQWfGenIDuibcT3zXtNditwKdvivN2XkXbT3Ijuz8hLAQS3znuyM7MLJ7mRBqjREHs0o3qnuad3UUpqnI2qqIF8+nesZVxihItSMq9oQXWNMuMMMsrapUbCZUw1miHxp2eu5Nw2UQVsCBBUnOfOUQVsOtHRsOmEFfyetlJ+xTLYKg27BXBLpvF7TqPB15qvHDX2/XPqQxuB3BP4uOOn6Mn3WAGsNCYSUH/T7FVy+gwnBN9mfsScNrDFRk6lw9BtpSMD7mXwnKmhmTuxAS/3r9EQPJ3CaNhXc4ax0ebDUMC4Rj7ns1V0y7tGPid4+8PIqbZMpSPQ72wKwpplPzmcbPAXRHF5JAWDctEYedufglX5apyOP/nUNxfBS8tOZODNy2hInm4KQsOQElPhm0dzp13uLQ1h/WQPNgVbm5b71zjq/lU09YE9PnCse1LryMbl/jWC+9SaqsxChu/FHTRllnLcFniiG8nh8a9LqAfvWIrmpiMqul8hnqmTsRQnYytOxlacjK04GVtxMrbiZGxlhDL/APaJc1uK0ZPQAAAAAElFTkSuQmCC"
                       alt />
                   </button>
                 </div>
@@ -59,10 +60,9 @@
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                     id="user-menu-item-1">Settings</a>
 
-                    <!-- PC Signout -->
-                  <a href="http://localhost/quiz/Forms/login.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                     
-                     id="user-menu-item-2" >Sign out
+                  <!-- PC Signout -->
+                  <a href="http://localhost/quiz/Forms/login.html" class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out
                   </a>
                 </div>
               </div>
@@ -108,8 +108,7 @@
             <a href="#"
               class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
 
-            <a href="http://localhost/quiz/Forms/login.html"
-               id="out"
+            <a href="http://localhost/quiz/Forms/login.html" id="out"
               class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign
               out</a>
           </div>
@@ -133,74 +132,41 @@
         <div class="card relative">
           <div class="card-body">
             <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-              <div class="bg-red-700 p-8 w-[50%] max-h-[80%] overflow-y-auto mx-auto my-auto mt-[10%] flex items-center justify-center flex-col rounded-lg">
+              <div
+                class="bg-red-700 p-8 w-[50%] max-h-[80%] overflow-y-auto mx-auto my-auto mt-[10%] flex items-center justify-center flex-col rounded-lg">
                 <form class="w-full flex flex-col justify-center">
                   <div class="relative mt-3">
-                    <input
-                      type="text"
-                      class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
-                      placeholder="Enter Question???"
-                      id="question"
-                      required
-                      name="question"
-                    />
+                    <input type="text" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
+                      placeholder="Enter Question???" id="question" required name="question" />
                   </div>
                   <div class="relative flex gap-2 mt-3">
-                    <input
-                      type="text"
-                      class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
-                      placeholder="Option 1"
-                      id="Option1"
-                      required
-                      name="Option1"
-                    />
-                    <input
-                      type="text"
-                      class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
-                      placeholder="Option 2"
-                      id="Option2"
-                      required
-                      name="Option2"
-                    />
+                    <input type="text" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
+                      placeholder="Option 1" id="Option1" required name="Option1" />
+                    <input type="text" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
+                      placeholder="Option 2" id="Option2" required name="Option2" />
                   </div>
                   <div class="relative flex gap-2 mt-3">
-                    <input
-                      type="text"
-                      class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
-                      placeholder="Option 3"
-                      id="Option3"
-                      required
-                      name="Option3"
-                    />
-                    <input
-                      type="text"
-                      class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
-                      placeholder="Option 4"
-                      id="Option4"
-                      required
-                      name="Option4"
-                    />
+                    <input type="text" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
+                      placeholder="Option 3" id="Option3" required name="Option3" />
+                    <input type="text" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm"
+                      placeholder="Option 4" id="Option4" required name="Option4" />
                   </div>
                   <div class="relative mt-3 flex justify-center">
-                    <input
-                      type="text"
-                      class="w-[80%] rounded-lg border-gray-200 p-4 text-sm shadow-sm"
-                      placeholder="Enter Answer"
-                      id="answer"
-                      required
-                      name="answer"
-                    />
+                    <input type="text" class="w-[80%] rounded-lg border-gray-200 p-4 text-sm shadow-sm"
+                      placeholder="Enter Answer" id="answer" required name="answer" />
                   </div>
                   <div id="subDiv" class="flex justify-center w-full mt-3 gap-4">
-                    <button id="submitBtn" class="bg-blue-700 rounded-md text-white p-2 w-2/4" type="submit">Submit</button>
-                    <button id="next" class="bg-blue-700 rounded-md text-white p-2 w-2/4 hidden" type="submit">Next</button>
+                    <button id="submitBtn" class="bg-blue-700 rounded-md text-white p-2 w-2/4"
+                      type="submit">Submit</button>
+                    <button id="next" class="bg-blue-700 rounded-md text-white p-2 w-2/4 hidden"
+                      type="submit">Next</button>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-      </div>
-    </main>    
+        </div>
+    </main>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

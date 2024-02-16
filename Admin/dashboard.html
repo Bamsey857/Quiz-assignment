@@ -23,14 +23,54 @@
 </style>
 
 <body class="h-full">
+
+
+  <div id="success" class="w-screen flex justify-center fixed top-2 z-50 hidden">
+    <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 absolute">
+      <div class="flex items-center justify-center w-12 bg-emerald-500">
+        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+        </svg>
+      </div>
+
+      <div class="px-4 py-2 -mx-3">
+        <div class="mx-3">
+          <span class="font-semibold text-emerald-500 dark:text-emerald-400">Success</span>
+          <p class="text-sm text-gray-600 dark:text-gray-200" id="succMess">Login Successfull</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="error" class="w-screen flex justify-center fixed top-2 z-50 hidden">
+    <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+      <div class="flex items-center justify-center w-12 bg-red-500">
+        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
+        </svg>
+      </div>
+
+      <div class="px-4 py-2 -mx-3">
+        <div class="mx-3">
+          <span class="font-semibold text-red-500 dark:text-red-400">Error</span>
+          <p class="text-sm text-gray-600 dark:text-gray-200" id="passError">
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="min-h-full">
     <nav class="bg-gray-800">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Your Company" />
+            <!--  -->
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
@@ -44,12 +84,12 @@
               <div class="relative ml-3">
                 <div>
                   <button type="button"
-                    class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 bg-gray-700"
                     id="mobile-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
                     <img class="h-8 w-8 rounded-full"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAY1BMVEX///8AAABJSUnR0dEODg6enp6kpKQRERF0dHRwcHAyMjK8vLzw8PDp6ens7OxZWVnc3NwkJCQdHR2NjY04ODj29vaqqqoXFxe1tbXLy8tQUFDj4+OBgYGVlZVnZ2crKytAQEBodD3rAAAE6UlEQVR4nO2di5aqMAxFrfgolJcgiIro/3/lBee6dBxGRXOSDqv7B3Qv2rQpaZhMoKT1Rt2yqrC/B6OIqpO6ZyH9r94i8vLVDxWl6lD6jw2m8Mqkx6RlMy+k/9wwQpOv+1W6WZOn0v9vAPtS942vK8n8r+h4eZI9VOnY6bln/2jbNj/jV//UOe10GUn/3UdU08fj644sWOdb6f/cT1H9PukfMPPt8ylM8I7KF3Vq0wQqti9Old9ottbopPVnKh2WrD6FeWuy3BNUFjyccD6jcGlDwUE8VEf5ksaltan3wi410XM522hRmyKnU+mQTBCKBa2LUoIJwpbaRSmx/UBMEpO/c5QKaQd6l3b1lHGJEC5KyTwagk1MH7WES4FxUTOJgFaBZJTEOaGPktECMh9kY48J+F3S54cwb5LxpzZm8/xvvSlj2GVKsq3/PcuSXYYqJ/vJ7OBknIyTcTJOxjaZuZNxMk7GyTiZt1jAUgD3ZD5jVE/GyTiZvy3DXy2Ik1k6GSfjZJyMk3EyTsbJcHAY04lmg3JRquF28QBFQBdOzG9oS9iL846A9a0mpJ7pFsZpk/5y04eOhG+kpTu0zM7jkxnTk4lgRUAXfMYSujEFgEmJluGMzeaIdTly1gJ5U6zMlLO8OQZHgIazhLYAVc5eqFmLTudYGd4koBp0iXEoK97yOWwEOPFtZjpi6IYmYS6hh4Yz7lQTGs64rwOUwAiQcZfPIs8AAu7rTSEwnE1jZpkJMJwl3C7AQ0CBm1qjutgwgR1q7PhdcNkm/72GNp6hZESuBIPimcQog92gk+mzBRpnQhfPMTIyLhONcJG42NgBCc4SgbkjRchItWyBRACpxhMFYKVJxPpOACaN1JRpJw15GjCT63IUkxcDNOxJ5hXycSY3yujf1E5Fe2kRbzYlHwz1e+edcJOzkvAogP3w756Q8JxWi/elTT9sB3iFu5ipD0N06rzi7zbRA9HbDV/a48yepDXIRriH3gWSgJZJW/yHZNJYIlPQPBkL2mi2RDRzRryL5hmPpFx7aUd3YEOSos3s+GJASSMjvTH7gqgskL9ovg+ig02po8zvEKU0/K9l+yB6iT6V9jgzJpmQKKE5iadmLSlR4cnagtxs4hHdPgl4K+b6WRAdaWQWfGenIDuibcT3zXtNditwKdvivN2XkXbT3Ijuz8hLAQS3znuyM7MLJ7mRBqjREHs0o3qnuad3UUpqnI2qqIF8+nesZVxihItSMq9oQXWNMuMMMsrapUbCZUw1miHxp2eu5Nw2UQVsCBBUnOfOUQVsOtHRsOmEFfyetlJ+xTLYKg27BXBLpvF7TqPB15qvHDX2/XPqQxuB3BP4uOOn6Mn3WAGsNCYSUH/T7FVy+gwnBN9mfsScNrDFRk6lw9BtpSMD7mXwnKmhmTuxAS/3r9EQPJ3CaNhXc4ax0ebDUMC4Rj7ns1V0y7tGPid4+8PIqbZMpSPQ72wKwpplPzmcbPAXRHF5JAWDctEYedufglX5apyOP/nUNxfBS8tOZODNy2hInm4KQsOQElPhm0dzp13uLQ1h/WQPNgVbm5b71zjq/lU09YE9PnCse1LryMbl/jWC+9SaqsxChu/FHTRllnLcFniiG8nh8a9LqAfvWIrmpiMqul8hnqmTsRQnYytOxlacjK04GVtxMrbiZGxlhDL/APaJc1uK0ZPQAAAAAElFTkSuQmCC"
                       alt />
                   </button>
                 </div>
@@ -111,7 +151,7 @@
               class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
 
               <!-- Mobile SignOUT -->
-            <a href="http://localhost/quiz/Forms/login.htm"
+            <a href="http://localhost/quiz/Forms/login.html"
                id="out"
               class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign
               out</a>

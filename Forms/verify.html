@@ -1,66 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Verify</title>
-  </head>
-  <script>
-    if (localStorage.getItem("Email")) {
-      window.location.href = "http://localhost/quiz/User/dashboard.html";
-    }
-  </script>
-  <body class="bg-gray-100">
-    <header class="bg-pink-500 py-4">
-      <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
-        <div class="text-white text-2xl font-bold">Code Quiz</div>
-        <nav>
-          <ul class="flex space-x-6">
-            <li>
-              <a href="index.html" class="text-white hover:text-gray-200"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-white hover:text-gray-200">Courses</a>
-            </li>
-            <li>
-              <a href="#" class="text-white hover:text-gray-200">Contact</a>
-            </li>
-            <li>
-              <a href="#" class="text-white hover:text-gray-200">About Us</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main class="max-w-4xl mx-auto px-4 py-8" id="otpSection">
-      <div class="bg-white rounded-lg shadow-lg p-8">
-        <h2 class="text-xl font-semibold mb-4">Verify OTP</h2>
-        <form method="post">
-          <div class="flex items-center justify-center space-x-2 mb-4">
-            <input
-              type="text"
-              id="otpInput"
-              class="w-32 h-12 text-center rounded-lg border-gray-300 shadow-sm focus:border-indigo-400 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              placeholder="000000"
-              maxlength="6"
-              name="otp"
-            />
-          </div>
-          <button
-            id="verifyOTP"
-            class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
-          >
-            Verify
-          </button>
-        </form>
-      </div>
-    </main>
-    <script type="module" src="http://localhost/Quiz/Js/verify.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Verify</title>
+</head>
+<script>
+  if (localStorage.getItem("Email")) {
+    window.location.href = "http://localhost/quiz/User/dashboard.html";
+  }
+</script>
 
-  </body>
+<body class="bg-gray-100">
+
+  <div id="success" class="w-screen flex justify-center fixed top-2 z-50 hidden">
+    <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 absolute">
+      <div class="flex items-center justify-center w-12 bg-emerald-500">
+        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
+        </svg>
+      </div>
+
+      <div class="px-4 py-2 -mx-3">
+        <div class="mx-3">
+          <span class="font-semibold text-emerald-500 dark:text-emerald-400">Success</span>
+          <p class="text-sm text-gray-600 dark:text-gray-200">Your account was registered!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="error" class="w-screen flex justify-center fixed top-2 z-50 hidden">
+    <div class="flex w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+      <div class="flex items-center justify-center w-12 bg-red-500">
+        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
+        </svg>
+      </div>
+
+      <div class="px-4 py-2 -mx-3">
+        <div class="mx-3">
+          <span class="font-semibold text-red-500 dark:text-red-400">Error</span>
+          <p class="text-sm text-gray-600 dark:text-gray-200">
+            Incorrect OTP
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header -->
+
+  <header class="bg-gradient-to-tr from-gray-900 to-gray-800 bg-clip-border shadow-gray-900/20 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
+      <div class="text-white text-2xl font-bold">Code Quiz</div>
+      <nav>
+        <ul class="flex space-x-6">
+          <li>
+            <a href="index.html" class="text-white hover:text-gray-200">Home</a>
+          </li>
+          <li>
+            <a href="#" class="text-white hover:text-gray-200">Courses</a>
+          </li>
+          <li>
+            <a href="#" class="text-white hover:text-gray-200">Contact</a>
+          </li>
+          <li>
+            <a href="#" class="text-white hover:text-gray-200">About Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="max-w-4xl mx-auto px-4 py-8" id="otpSection">
+    <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center">
+      <h2 class="text-xl font-semibold mb-4">Verify OTP</h2>
+      <form method="post">
+        <div class="flex items-center justify-center space-x-2 mb-4">
+          <input type="text" id="otpInput"
+            class="w-32 h-12 text-center rounded-lg border-gray-300 shadow-sm focus:border-indigo-400 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            placeholder="000000" maxlength="6" name="otp" />
+        </div>
+        <button id="verifyOTP"
+          class="submit-button block w-full select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+          Verify
+        </button>
+      </form>
+    </div>
+  </main>
+  <script type="module" src="http://localhost/Quiz/Js/verify.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</body>
+
 </html>
