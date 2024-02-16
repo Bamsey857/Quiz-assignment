@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Axios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-screen h-screen flex justify-center items-center flex-col border-2 border-black">
+      <input type="text" max="100" placeholder="Language" id="lang" class="border-2 border-red-700 p-2 rounded-lg mb-2">
+      <input type="text" placeholder="Description" id="desc" class="border-2 border-red-700 p-2 rounded-lg mb-2">
+      <button id="btn">Submit</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+      const btn = document.getElementById("btn");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const lang = document.getElementById("lang").value;
+        const desc = document.getElementById("desc").value;
+
+        const data = {lang, desc};
+
+
+        axios
+          .post("http://localhost/quiz/try.php", data)
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      });
+    </script>
+  </body>
+</html>

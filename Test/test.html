@@ -1,0 +1,154 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    #questionsGrid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: 200px;
+    }
+    .card:last-child{
+        grid-column: span 2;
+    }
+</style>
+<body>
+    <div class="card-body"></div>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const allQuestions = JSON.parse(localStorage.getItem('Questions'));
+
+    const courseDiv = document.querySelector(".card-body");
+    courseDiv.classList.add('flex', 'flex-col', 'border-2', 'border-black', 'w-[30%]');
+
+    allQuestions.forEach((question, index) => {
+        const div = document.createElement("div");
+
+        const h5 = document.createElement("h5");
+        h5.textContent = `${index + 1}. ${question.question}`;
+
+        const gridDiv = document.createElement('div');
+        gridDiv.className = 'grid grid-cols-2 grid-rows-3 gap-2 mt-3';
+
+        const opt1 = createOptionDiv(question.option1);
+        const opt2 = createOptionDiv(question.option2);
+        const opt3 = createOptionDiv(question.option3);
+        const opt4 = createOptionDiv(question.option4);
+        const answer = createAnswerDiv(question.answer);
+
+        gridDiv.appendChild(opt1);
+        gridDiv.appendChild(opt2);
+        gridDiv.appendChild(opt3);
+        gridDiv.appendChild(opt4);
+        gridDiv.appendChild(answer);
+
+        div.appendChild(h5);
+        div.appendChild(gridDiv);
+
+        courseDiv.appendChild(div);
+    });
+})
+
+function createOptionDiv(option) {
+    const div = document.createElement('div');
+    div.className = 'p-2 bg-green-600 text-red-700 text-bold mt-2 card';
+    div.textContent = option;
+    return div;
+}
+
+function createAnswerDiv(answer) {
+    const div = document.createElement('div');
+    div.className = 'p-2 bg-green-600 text-red-700 text-bold mt-2 card';
+    div.textContent = answer;
+    return div;
+}
+
+   </script>
+    
+    
+    <script src="http://localhost/Quiz/test/test.js"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Button Popup with Tailwind CSS</title>
+</head>
+<body>
+    <button id="popupButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Open Popup</button>
+
+    <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-red-700 p-4 w-4/5 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-64 overflow-y-auto">
+            <form class="max-w-sm mx-auto">
+                <div class="mb-5">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                    <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required>
+                </div>
+                <div class="mb-5">
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                    <input type="password" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                </div>
+                <div class="mb-5">
+                    <label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Repeat password</label>
+                    <input type="password" id="repeat-password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                </div>
+                <div class="flex items-start mb-5">
+                    <div class="flex items-center h-5">
+                        <input id="terms" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                    </div>
+                    <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a></label>
+                </div>
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="closeButton">Register new account</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="notification" class="fixed left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-400 text-white p-4 hidden rounded-lg">
+        Notification: Popup closed successfully.
+    </div>
+
+    <script>
+        // Get the button and popup element using their IDs
+        const popupButton = document.getElementById('popupButton');
+        const popup = document.getElementById('popup');
+
+        // Show the popup when the button is clicked
+        popupButton.addEventListener('click', () => {
+            popup.classList.remove('hidden');
+        });
+
+        // Hide the popup and show the notification when the close button is clicked
+        const closeButton = document.getElementById('closeButton');
+        closeButton.addEventListener('click', () => {
+            popup.classList.add('hidden');
+            showNotification();
+        });
+
+        // Function to show the notification for a few seconds
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.remove('hidden');
+
+            // Hide the notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

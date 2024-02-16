@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Verify</title>
+  </head>
+  <script>
+    if (localStorage.getItem("Email")) {
+      window.location.href = "http://localhost/quiz/User/dashboard.html";
+    }
+  </script>
+  <body class="bg-gray-100">
+    <header class="bg-pink-500 py-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
+        <div class="text-white text-2xl font-bold">Code Quiz</div>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="index.html" class="text-white hover:text-gray-200"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-white hover:text-gray-200">Courses</a>
+            </li>
+            <li>
+              <a href="#" class="text-white hover:text-gray-200">Contact</a>
+            </li>
+            <li>
+              <a href="#" class="text-white hover:text-gray-200">About Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="max-w-4xl mx-auto px-4 py-8" id="otpSection">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-xl font-semibold mb-4">Verify OTP</h2>
+        <form method="post">
+          <div class="flex items-center justify-center space-x-2 mb-4">
+            <input
+              type="text"
+              id="otpInput"
+              class="w-32 h-12 text-center rounded-lg border-gray-300 shadow-sm focus:border-indigo-400 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              placeholder="000000"
+              maxlength="6"
+              name="otp"
+            />
+          </div>
+          <button
+            id="verifyOTP"
+            class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+          >
+            Verify
+          </button>
+        </form>
+      </div>
+    </main>
+    <script type="module" src="http://localhost/Quiz/Js/verify.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </body>
+</html>

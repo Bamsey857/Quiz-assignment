@@ -1,0 +1,127 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+html,
+body {
+	background: #DD487E;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.logo {
+	position: absolute;
+	color: #fff;
+	font-size: 2rem;
+	font-family: 'roboto', sans-serif;
+	font-weight: 900;
+	margin: 1.8rem 0 0 5rem;
+	cursor: pointer;
+}
+#header {
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 7em;
+}
+header {
+	background: #DD4A7F;
+	width: 620px;
+	height: 60px;
+	margin: 1.3rem 0 0 0;
+	border-radius: 22px;
+	box-shadow: -4px -4px 8px rgb(231, 140, 174),
+		-4px -4px 12px rgba(231, 140, 174, 0.5),
+		2px 2px 4px rgba(221, 72, 126, 0.1),
+		2px 2px 8px rgba(0, 0, 0, .3);
+}
+header nav ul li {
+	font-size: 25px;
+	margin: 15px 30px;
+}
+header nav ul li::marker {
+	color: #fc8400;
+}
+header nav ul {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+header nav ul li a {
+	font-size: 25px;
+	text-decoration: none;
+	color: #ffffff;
+}
+#header button,
+.s-button {
+	background: #FFFFFF;
+	box-shadow: 0 2px 0 #ffffffbe;
+	border: none;
+	border-radius: 8px;
+	font-weight: 600;
+	margin: 20px 0 0 0;
+	height: 40px;
+	width: 6rem;
+	cursor: pointer;
+}
+#header button:active,
+.start .s-button:active {
+	box-shadow: none;
+	transform: translateY(3px);
+}
+.info {
+	height: 50px;
+	background-color: red;
+}
+.container{
+	display: flex;
+	position: absolute;
+	height: calc(100% - 75px);
+	width: 100%;
+}
+.left,.right{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	width: 50%;
+	float: left;
+	padding: 20px;
+	padding-left: 40px;
+}
+.right{
+	float: right;
+	align-items: center;
+}
+.courses{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+	height: 120px;
+	width: 100%;
+	border: 2px solid red;
+}
+.course{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background: #fc8400;
+}
+.cour:last-child{
+	display: flex;
+	justify-content: space-around;
+	height: 120px;
+	width: 100%;
+}
+.cours{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 25%;
+	background: #fc8400;
+}
